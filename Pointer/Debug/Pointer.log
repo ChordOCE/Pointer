@@ -1,0 +1,5 @@
+﻿Source.obj : error LNK2005: "public: int __thiscall Player::GetHealth(void)" (?GetHealth@Player@@QAEHXZ) already defined in Player.obj
+Source.obj : error LNK2005: "public: char __thiscall Player::GetName(void)" (?GetName@Player@@QAEDXZ) already defined in Player.obj
+Source.obj : error LNK2005: "public: void __thiscall Player::SetHealth(void)" (?SetHealth@Player@@QAEXXZ) already defined in Player.obj
+Source.obj : error LNK2005: "public: void __thiscall Player::SetName(void)" (?SetName@Player@@QAEXXZ) already defined in Player.obj
+C:\Users\bradd\source\repos\Pointer\Debug\Pointer.exe : fatal error LNK1169: one or more multiply defined symbols found
