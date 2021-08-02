@@ -1,0 +1,8 @@
+﻿  Source.cpp
+C:\Users\s211022\Documents\C++ intro\PPD\Pointer\Pointer\Source.cpp(30,19): warning C4552: '+': result of expression not used
+C:\Users\s211022\Documents\C++ intro\PPD\Pointer\Pointer\Source.cpp(14,7): warning C4101: 'Save': unreferenced local variable
+C:\Users\s211022\Documents\C++ intro\PPD\Pointer\Pointer\Source.cpp(15,7): warning C4101: 'Load': unreferenced local variable
+C:\Users\s211022\Documents\C++ intro\PPD\Pointer\Pointer\Source.cpp(16,7): warning C4101: 'Search': unreferenced local variable
+C:\Users\s211022\Documents\C++ intro\PPD\Pointer\Pointer\Source.cpp(12,7): warning C4101: 'Add': unreferenced local variable
+C:\Users\s211022\Documents\C++ intro\PPD\Pointer\Pointer\Source.cpp(13,7): warning C4101: 'Sort': unreferenced local variable
+  Pointer.vcxproj -> C:\Users\s211022\Documents\C++ intro\PPD\Pointer\x64\Debug\Pointer.exe
