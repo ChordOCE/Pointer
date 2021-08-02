@@ -7,13 +7,8 @@ using namespace std;
 
 int main()
 {
-	int CurrentPlayers = 0;
+	int CurrentPlayers = 1;
 	char Action[5];
-	char Add[4];
-	char Sort[4];
-	char Save[64];
-	char Load[64];
-	char Search[64];
 	Player** database = new Player * [CurrentPlayers];
 	std::cout << "What would you like to do?" << std::endl;
 	std::cout << "Add, Sort, Save, Load, Search" << std::endl;
@@ -26,7 +21,7 @@ int main()
 			system("cls");
 			std::cout << CurrentPlayers << std::endl;
 			database[CurrentPlayers]->SetName();
-			database[CurrentPlayers]->SetHealth();
+			//database[CurrentPlayers]->SetHealth();
 			CurrentPlayers + 1;
 			break;
 		};
