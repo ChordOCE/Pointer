@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <cstdlib>
 
 #include "Player.h"
 
@@ -7,14 +8,17 @@ using namespace std;
 
 int main()
 {
-	int totalPlayers = 1;
+	int maxPlayers = 100;
 	int currentPlayers = 0;
+
 	char Action[5];
-	Player** database = new Player * [totalPlayers];
-	for (int i = 0; i < totalPlayers; ++i)
+		
+	Player** database = new Player * [maxPlayers];
+	for (int i = 0; i < maxPlayers; ++i)
 	{
 		database[i] = new Player();
 	}
+	int count = sizeof(database) / sizeof(Player);
 
 	while (true)
 	{
@@ -24,10 +28,11 @@ int main()
 		std::cin >> Action;
 		if (strcmp(Action, "Add") == 0)
 		{
-			std::cout << totalPlayers << std::endl;
+			std::cout << "Player Number: " << currentPlayers + 1 << std::endl;
 			database[currentPlayers]->SetName();
 			database[currentPlayers]->SetHealth();
-			totalPlayers = totalPlayers + 1;
+
+			maxPlayers = maxPlayers + 1;
 			currentPlayers = currentPlayers + 1;
 			
 		};
@@ -36,7 +41,7 @@ int main()
 		{
 			for (int i = 0; i < currentPlayers; ++i)
 			{
-				std::cout << "Name: " << database[i]->savedName << " Health: " << database[i]->savedHealth << std::endl;
+				std::cout << "Player " << i + 1 << std::endl << "Name: " << database[i]->savedName << std::endl << "Health: " << database[i]->savedHealth << std::endl;
 			}
 
 		};
@@ -51,12 +56,12 @@ int main()
 		if (strcmp(Action, "Save") == 0)
 		{
 			std::fstream file;
-			file.open("Database.dat", std::ios_base::binary);
+			file.open("Database.txt", std::ios::out | std::ios_base::binary);
 			if (file.is_open())
 			{
-				for (int i = 0; 1 < currentPlayers; ++i)
+				for (int i = 0; 1 < count; ++i)
 				{
-					file.write((char*)database[i], sizeof(Player));
+					file.write((char*)database[i], sizeof(Player));	
 				}
 				file.close();
 			}
@@ -66,7 +71,7 @@ int main()
 		if (strcmp(Action, "Load") == 0)
 		{
 			std::fstream file;
-			file.open("Database.txt", std::ios_base::in | std::ios_base::binary);
+			file.open("Database.dat", std::ios_base::in | std::ios_base::binary);
 			if (file.is_open())
 			{
 				while (!file.eof() && file.peek() != EOF)
